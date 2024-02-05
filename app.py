@@ -1,8 +1,9 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+import plotly.express as px  
 
 df = pd.read_csv('vehicles_us (2).csv')
+
 # App header
 st.header('🚗 Hilarious Vehicle Sales Insights 🚗')
 
@@ -39,11 +40,3 @@ st.plotly_chart(scatter_plot)
 st.markdown("---")
 st.markdown("This app is brought to you by the Department of Silly Statistics. All data is entirely fictional, "
             "and any resemblance to real vehicles or sales figures is purely coincidental. 🚙🤣")
-
-  
-
-
-
-
-
-
