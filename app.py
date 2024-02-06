@@ -51,10 +51,10 @@ st.plotly_chart(bar_chart)
 # Pie chart section with more insights
 st.subheader('Pie Chart: Distribution of Drivetrains')
 
-# Generate a pie chart based on drivetrain distribution
-drivetrain_distribution = df['drive'].value_counts().reset_index()
-drivetrain_distribution.columns = ['Drivetrain', 'Count']
-pie_chart = px.pie(drivetrain_distribution, names='Drivetrain', values='Count', title='Distribution of Drivetrains')
+# Generate a pie chart based on type
+type_distribution = df['type'].value_counts().reset_index()
+type_distribution.columns = ['Vehicle Type', 'Count']
+pie_chart = px.pie(type_distribution, names='Vehicle Type', values='Count', title='Distribution of Vehicle Types')
 
 # Display the pie chart
 st.plotly_chart(pie_chart)
