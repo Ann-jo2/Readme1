@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px  
+import plotly.express as px
 
+# Load the dataset
 df = pd.read_csv('vehicles_us (2).csv')
 
 # App header
@@ -35,6 +36,28 @@ scatter_plot = px.scatter(scatter_df, x='Speed', y='Sales', title='Speed vs Sale
 
 # Display the scatter plot
 st.plotly_chart(scatter_plot)
+
+# Bar chart section with insights
+st.subheader('Bar Chart: Most Common Vehicle Types')
+
+# Generate a bar chart based on vehicle types
+vehicle_types = df['type'].value_counts().reset_index()
+vehicle_types.columns = ['Vehicle Type', 'Count']
+bar_chart = px.bar(vehicle_types, x='Vehicle Type', y='Count', title='Most Common Vehicle Types')
+
+# Display the bar chart
+st.plotly_chart(bar_chart)
+
+# Pie chart section with more insights
+st.subheader('Pie Chart: Distribution of Drivetrains')
+
+# Generate a pie chart based on drivetrain distribution
+drivetrain_distribution = df['drive'].value_counts().reset_index()
+drivetrain_distribution.columns = ['Drivetrain', 'Count']
+pie_chart = px.pie(drivetrain_distribution, names='Drivetrain', values='Count', title='Distribution of Drivetrains')
+
+# Display the pie chart
+st.plotly_chart(pie_chart)
 
 # A humorous footer
 st.markdown("---")
