@@ -49,12 +49,12 @@ bar_chart = px.bar(vehicle_types, x='Vehicle Type', y='Count', title='Most Commo
 st.plotly_chart(bar_chart)
 
 # Pie chart section with more insights
-st.subheader('Pie Chart: Distribution of Drivetrains')
+st.subheader('Pie Chart: Distribution of Colors')
 
 # Generate a pie chart based on paint color
 type_distribution = df['paint_color'].value_counts().reset_index()
 type_distribution.columns = ['paint_color', 'Count']
-pie_chart = px.pie(type_distribution, names='paint_color', values='Count', title='Distribution of Vehicle Types')
+pie_chart = px.pie(type_distribution, names='paint_color', values='Count', title='Distribution of Vehicle Colors')
 
 # Display the pie chart
 st.plotly_chart(pie_chart)
