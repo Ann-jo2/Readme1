@@ -8,8 +8,8 @@ df = pd.read_csv('vehicles_us (2).csv')
 # App header
 st.header('🚗 Hilarious Vehicle Sales Insights 🚗')
 
-# Checkbox to display raw data (just for fun)
-if st.checkbox('Show Raw Data (because why not?)'):
+# Checkbox to display raw data 
+if st.checkbox('Show Raw Data'):
     st.write(df.head())
 
 # Histogram section with a humorous twist
@@ -25,14 +25,14 @@ histogram = px.histogram(hist_df, x='Laughter Levels', title='Distribution of La
 st.plotly_chart(histogram)
 
 # Scatter plot section with a humorous twist
-st.subheader('Scatter Plot: Relationship Between Speed and Sales')
+st.subheader('Scatter Plot: Relationship Between Model and Condition')
 
 # Generate a scatter plot with fictional data
-speed = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
-sales = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55]
-scatter_data = {'Speed': speed, 'Sales': sales}
+model = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
+condition = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55]
+scatter_data = {'Model': model, 'Condition': condition}
 scatter_df = pd.DataFrame(scatter_data)
-scatter_plot = px.scatter(scatter_df, x='Speed', y='Sales', title='Speed vs Sales - A Wild Connection')
+scatter_plot = px.scatter(scatter_df, x='Model', y='Condition', title='Model vs Conditon - A Wild Connection')
 
 # Display the scatter plot
 st.plotly_chart(scatter_plot)
@@ -51,10 +51,10 @@ st.plotly_chart(bar_chart)
 # Pie chart section with more insights
 st.subheader('Pie Chart: Distribution of Drivetrains')
 
-# Generate a pie chart based on type
-type_distribution = df['type'].value_counts().reset_index()
-type_distribution.columns = ['Vehicle Type', 'Count']
-pie_chart = px.pie(type_distribution, names='Vehicle Type', values='Count', title='Distribution of Vehicle Types')
+# Generate a pie chart based on paint color
+type_distribution = df['paint_color'].value_counts().reset_index()
+type_distribution.columns = ['Vehicle paint_color', 'Count']
+pie_chart = px.pie(type_distribution, names='paint_colors', values='Count', title='Distribution of Vehicle Types')
 
 # Display the pie chart
 st.plotly_chart(pie_chart)
