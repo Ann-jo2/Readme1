@@ -17,7 +17,7 @@ This tool simulates random events and provides insights into a parallel universe
 The `notebooks/EDA.ipynb` notebook contains exploratory data analysis. Ensure the notebook is functional, showing outputs based on the real dataset. Pay attention to preprocessing steps for accurate analysis.
 
 ## Web App
-Explore the Streamlit web app at [https://<APP_NAME>.onrender.com/](https://<APP_NAME>.onrender.com/). Enjoy the humor-infused visualizations!
+Explore the Streamlit web app at [https://vehiclesprojectnew1.onrender.com](https://vehiclesprojectnew1.onrender.com). Enjoy the humor-infused visualizations!
 
 ### Additional Update
 ### Diversifying Data Visualization
